@@ -4,11 +4,14 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:template match="/">
 		<html>
+			<head>
+				<link rel="stylesheet" href="/out.css"/>
+			</head>
 			<body>
 				<xsl:choose>
 					<xsl:when test="catalog/cd">
 	<!-- 				<h2>Indexs</h2> -->
-					<table border="1">
+					<table>
 	<!-- 					<tr bgcolor="#9acd32"> -->
 	<!-- 						<th>Index</th> -->
 	<!-- 						<th>Count</th> -->
