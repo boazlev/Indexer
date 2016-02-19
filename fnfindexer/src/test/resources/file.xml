@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/out.xslt"?>
+<catalog>
+  <cd>
+    <index>1234</index>
+    <count>1</count>
+  </cd>
+  <cd>
+    <index>4573</index>
+    <count>2</count>
+  </cd>
+  <cd>
+    <index>19846</index>
+    <count>4</count>
+  </cd>
+</catalog>
