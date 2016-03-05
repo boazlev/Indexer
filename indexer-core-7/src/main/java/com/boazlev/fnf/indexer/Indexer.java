@@ -48,21 +48,21 @@ public class Indexer {
 		} catch (IOException e) {
 			throw new IndexerException("Failed getting text from file ", e);
 		}
-
-		InputStream in = this.getClass().getClassLoader().getResourceAsStream(idsFileName);
-
-		BufferedReader br = new BufferedReader(new InputStreamReader(in));
-		String line;
-
-		List<String> lines = new ArrayList<>();
-		try {
-			while ((line = br.readLine()) != null) {
-				lines.add(line);
+		try(InputStream in = this.getClass().getClassLoader().getResourceAsStream(idsFileName);
+			BufferedReader br = new BufferedReader(new InputStreamReader(in));){
+			String line;
+			List<String> lines = new ArrayList<>();
+			try {
+				while ((line = br.readLine()) != null) {
+					lines.add(line);
+				}
+			} catch (IOException e) {
+				 throw new IndexerException("Failed getting text from file ", e);
 			}
+			map = this.index(content.toString(), lines);
 		} catch (IOException e) {
-			 throw new IndexerException("Failed getting text from file ", e);
+			throw new IndexerException("Failed reading text from file ", e);
 		}
-		map = this.index(content.toString(), lines);
 		return map;
 	}
 
